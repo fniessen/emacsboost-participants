@@ -95,6 +95,14 @@ Les occurrences de "amet" sont trouvées.
 Utilisez ~M-x isearch-forward~ (ou ~C-s~) pour rechercher "amet" et appuyez sur ~C-s~
 pour trouver les occurrences suivantes.
 
+** Recherche incrémentale simple
+
+Rechercher la première occurrence du mot "exemple" dans le buffer.
+
+Rechercher les occurrences suivantes du mot "exemple".
+
+Rechercher config, configurer, configuration.
+
 ** Rechercher et remplacer du texte
 
 *** Description
@@ -113,31 +121,23 @@ Toutes les occurrences de "amet" sont remplacées par "est".
 
 Utilisez ~M-x query-replace~ (ou ~M-%~) pour effectuer le remplacement.
 
-** Naviguer, supprimer, sauver
+** Remplacement global
 
-*** Description
+Remplacer en confirmant chaque remplacement qui a du sens, toutes les
+occurrences de "jour" par "nuit".
 
-Effectuez diverses actions sur le texte, telles que la sélection, la copie, la
-suppression et l'enregistrement.
+Première occurrence à remplacer : jour.
 
-*** Instructions
+** Utilisation des marqueurs pour une sélection fine
 
-Sélectionnez le paragraphe :
+Placer un marqueur (~C-SPC~) au début de la zone de texte à modifier.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus quam
-quis mi scelerisque, sed tristique eros semper. Sed lacinia, eros sed luctus
-ultricies, tortor enim iaculis enim, sed facilisis eros quam sit amet nisl.
+Se déplacer vers la fin de la zone de texte, puis utiliser ~M-%~ pour effectuer
+un remplacement uniquement dans cette sélection.
 
-Copiez-le, créez une nouvelle ligne, collez le
-paragraphe copié, supprimez un mot, et enregistrez le fichier.
-
-*** Résultat attendu
-
-Les actions mentionnées sont effectuées.
-
-*** Solution                                                          :noexport:
-
-Suivez les instructions pour accomplir chaque action.
+Faire l'exercice du remplacement précédent sur une section précise, de manière
+à pouvoir faire un remplacement global, sans besoin de confirmer chaque
+remplacement.
 
 ** Copier le chemin complet d'un fichier (1 - via find-file)
 
@@ -207,7 +207,7 @@ Utilisez les commandes d'indentation appropriées pour indenter le code.
 - Quelle est l'autre façon de l'écrire ?
 - Que fait ~C-u M-x indent-rigidly~ ?
 
-** Vérification de la Cohérence de la Vue SQL
+** Vérification de la cohérence de la vue SQL
 
 *** Description
 
@@ -275,41 +275,12 @@ date_escalation_fix,time_escalation_fix,date_esc_fix_orig,time_esc_fix_orig,esca
 1. Vérifier avec C-s C-w... que les 2 SELECT physiques sont identiques
 2. Faire des manipulations sur le nom des colonnes de la vue
 
-** Recherche simple
-
-Rechercher la première occurrence du mot "exemple" dans le buffer.
-
-Rechercher les occurrences suivantes du mot "exemple".
-
-Rechercher config, configurer, configuration.
-
-** Recherche incrémentale
-
-Commencez à taper "config" pour trouver toutes les occurrences de ce mot dans
-le buffer en temps réel.
-
-** Remplacement basique
-
-Remplacer, une par une, toutes les occurrences du mot "vieux" par "nouveau".
-
-** Remplacement global
-
-Remplacer, d'un coup (sans devoir confirmer chaque remplacement), toutes les
-occurrences de "jour" par "nuit".
-
-** Utilisation des marqueurs pour une sélection fine
-
-Placer un marqueur (~C-SPC~) au début de la zone de texte à modifier.
-
-Se déplacer vers la fin de la zone de texte, puis utiliser ~M-%~ pour effectuer
-un remplacement uniquement dans cette sélection.
-
 * 101.2 - Fonctionnalités avancées
 
 ** Filtrage de lignes d'erreurs
 
-- Travailler sur une portion de texte spécifique extraite du journal (/log/)
-  suivant :
+- Travailler uniquement sur une portion de texte spécifique extraite du journal
+  (/log/) suivant :
 
 #+begin_src ablog
 [DEBUG][2023-10-06 12:52:08,843][RestrictionParsedImpl] - [Restriction is applicable, generated SQL=[afm_docvers.table_name = 'afm_scmpref' AND afm_docvers.field_name = 'doc_logo_dark' AND afm_docvers.pkey_value = '0']]
@@ -322,8 +293,9 @@ un remplacement uniquement dans cette sélection.
 [DEBUG][2023-10-06 12:52:08,966][RenderingFilter] - [Rendering mode]
 #+end_src
 
-- Supprimer toutes les lignes de type DEBUG.
-- Conserver uniquement les lignes d'erreur (ERROR).
+- Instructions :
+  - Supprimer toutes les lignes de type DEBUG.
+  - Conserver uniquement les lignes d'erreur (ERROR).
 
 ** Collage
 
@@ -376,14 +348,6 @@ sed 's#^\./##' "$temp_file" > "$temp_file.tmp" \
 
 Et vice-versa.
 
-** Recherche et remplacement dans plusieurs fichiers
-
-Utiliser ~M-x find-name-dired~ pour rechercher tous les fichiers portant un
-nom spécifique.
-
-Ensuite, utiliser ~M-x dired-do-query-replace-regexp~ pour effectuer un
-remplacement avec expression régulière dans tous ces fichiers.
-
 ** Chercher tous les fichiers qui ont string1 et string2 sur une même ligne
 
 - Faire un rgrep pour voir toutes les lignes avec string1
@@ -393,17 +357,7 @@ remplacement avec expression régulière dans tous ces fichiers.
 Éventuellement, faire une modif (remplacer string2 par autre chose) puis
 rafraîchir le buffer Grep.
 
-** Rechercher un string
-
-#+begin_src js
-const APP_PATH="cafmweb"
-#+end_src
-
-Ajouter un espace avant et après l'égal, et insérer un point-virgule à la fin.
-
-* 101.2 - Fonctionnalités avancées / Édition de bloc (rectangle)
-
-* 101.2 - Fonctionnalités avancées / Macros
+* 101.2 - Fonctionnalités avancées / Édition de blocs et Macros
 
 Exemples concrets où l'utilisation de macros est particulièrement utile, tels
 que l'alignement de texte, les transformations de code, la modification de
@@ -434,6 +388,8 @@ File Two.docx
 File Three.pdf
 #+end_src
 
+Objectif :
+
 #+begin_src shell
 file_one.txt
 file_two.docx
@@ -442,8 +398,13 @@ file_three.pdf
 
 ** Mettre en forme un bloc de texte
 
-Transforme le texte ~Texte à formater~ en ~<p class="important">Texte
-à formater</p>~.
+Transforme le texte
+
+~Texte à formater~
+
+en
+
+~<p class="important">Texte à formater</p>~
 
 ** Commande avec 5 noms de fichiers par ligne
 
@@ -488,7 +449,8 @@ convert geo_region hactivity_log hactivity_logmonth hactivity_logmonth
 
 ** Remplacement alternatif (1 - manuellement)
 
-Vous disposez d'un texte contenant le caractère ~:~ en plusieurs occurrences :
+Vous disposez d'un texte contenant le caractère ~:~ en plusieurs occurrences sur
+chaque ligne :
 
 : C'est simple : suivez les instructions.
 : La clé du succès : la persévérance.
@@ -595,13 +557,17 @@ sudo usermod -aG docker ${USER}
 #+end_src
 
 Réorganisez ces instructions en une liste d'instructions claires, avec chaque
-commande Shell reprise dans un bloc de code, du style :
+commande Shell reprise dans un bloc de code.
 
-#+begin_src shell
-commande
-#+end_src
+Exemple :
 
-Veuillez noter qu'il y a un caractère de tabulation entre le numéro et
+1. Navigate to the root directory of the Client repository in Git.
+
+  #+begin_src shell
+  cd /path/to/Client/repository
+  #+end_src
+
+*NOTE -* Veuillez noter qu'il y a un caractère de tabulation entre le numéro et
 l'instruction. Vous devez le remplacer par un espace standard.
 
 * 101.3 - Aide, configuration et personnalisation
@@ -609,8 +575,6 @@ l'instruction. Vous devez le remplacer par un espace standard.
 ** Aide
 
 - Quelle commande permet de supprimer les lignes en double ?
-- Est-ce que cette commande supprime également les lignes identiques non
-  consécutives ?
 - Les touches ~C-f~ et ~<right>~ invoquent quelle(s) commande(s) ?  Légère
   différence...
 - Quelle commande est associée aux touches ~C-n~ ou ~<down>~ ?
@@ -649,7 +613,8 @@ commandes dans Emacs.
 
 *** Instructions
 
-Évaluez le code Emacs Lisp suivant, et puis exécutez la fonction :
+Évaluez le code Emacs Lisp suivant (contenant une définition de fonction), et
+puis exécutez la fonction :
 
 #+begin_src emacs-lisp
 (defun write-hello-world-to-echo-area ()
@@ -675,17 +640,6 @@ Le texte "Hello, world!" devrait s'afficher dans l'/echo area/.
 
 Le résultat de l'évaluation, 3, devrait s'afficher dans la zone d'écho.
 
-** Code
-
-#+begin_src emacs-lisp
-(defun example-function ()
-  (if (condition)
-      (progn
-        (do-something)
-        (do-something-else))
-    (other-action)))
-#+end_src
-
 ** AHS
 
 - Ouvrez un fichier source dans Emacs.
@@ -693,7 +647,7 @@ Le résultat de l'évaluation, 3, devrait s'afficher dans la zone d'écho.
 - Déplacez le curseur sur différents symboles et observez la mise en évidence
   automatique.
 
-* 101.4 - Dired, Helm et intégration Shell
+* 101.4 - Dired et intégration Shell
 
 ** Copier le nom d'un fichier
 
@@ -725,6 +679,10 @@ C-u 0 w
 
 * 202.1 - Outils supplémentaires
 
+** YASnippet
+
+Créer un snippet pour un mode qui vous intéresse.
+
 * 202.2 - Git et Projectile
 
 ** vc-dir
@@ -740,9 +698,6 @@ un dépôt de versionnement. Les exercices sont conçus pour guider les étudian
 - Navigation : Utilisez les touches fléchées pour naviguer dans la liste des
   fichiers et dossiers affichés dans vc-dir.
 
-- Affichage des modifications : Sélectionnez un fichier dans vc-dir et observez
-  les modifications apportées à ce fichier.
-
 - Voir les différences : Sélectionnez un fichier modifié et utilisez la commande
   appropriée pour afficher les différences entre la version actuelle et la
   version précédente de ce fichier.
@@ -750,36 +705,11 @@ un dépôt de versionnement. Les exercices sont conçus pour guider les étudian
 - Commit : Sélectionnez les fichiers que vous souhaitez committer dans vc-dir et
   exécutez la commande pour créer un nouveau commit.
 
-- Historique des commits : Accédez à la liste des commits précédents pour un
-  fichier particulier et explorez les messages de commit, les auteurs et les
-  dates.
-
-- Comparaison entre commits : Comparez les différences entre deux commits
-  précédents d'un fichier en utilisant les fonctionnalités fournies par vc-dir.
-
-- Suppression de fichiers : Supprimez un fichier dans vc-dir et vérifiez comment
+- Suppression de fichiers : Supprimez un fichier dans Dired et vérifiez comment
   cela affecte l'état de suivi de version.
-
-- Restauration de fichiers : Utilisez vc-dir pour restaurer un fichier à une
-  version précédente.
-
-- Visualisation des branches : Explorez la possibilité d'afficher et de basculer
-  entre différentes branches dans vc-dir.
 
 - Annotation de fichiers : Utilisez vc-dir pour afficher les annotations (blâme)
   d'un fichier et voir quelles parties ont été modifiées par quelles révisions.
-
-- Comparaison avec une révision : Sélectionnez un fichier et comparez-le avec
-  une révision spécifique pour voir les modifications apportées.
-
-- Gestion des conflits : Créez intentionnellement un conflit dans un fichier,
-  puis utilisez vc-dir pour résoudre le conflit.
-
-- Voir les détails de révision : Explorez la possibilité d'afficher les détails
-  d'une révision, y compris les commentaires de commit et les changements.
-
-- Changement de dépôt : Utilisez vc-dir pour naviguer vers un autre répertoire
-  de projet sous contrôle de version et explorez son état.
 
 * 202.3/4 - Org mode
 
@@ -812,14 +742,15 @@ Idées :
 - Donc, ajouter deux lignes blanches dans le tableau Org et faire un
   copier/coller du rectangle pour déplacer de deux lignes vers le haut
 
-** Faire des sections
+** Sections
 
-#+begin_quote
-Description : Utilisez les commandes de déplacement du curseur pour parcourir le buffer.
-Instructions : Parcourez le texte en utilisant les commandes de déplacement du curseur.
-Résultat attendu : Vous avez navigué à travers le buffer en utilisant les commandes de déplacement.
-Solution : Utilisez les commandes de déplacement (par exemple, C-n, C-p, C-f, C-b, M-f, M-b, etc.) pour naviguer dans le buffer.
-#+end_quote
+Manipuler des sections.
+
+Idem avec des éléments de listes, numérotées ou pas.
+
+** Tableau
+
+Créer un tableau de 3 lignes et 4 colonnes.
 
 * Pour finir
 
@@ -828,10 +759,10 @@ Solution : Utilisez les commandes de déplacement (par exemple, C-n, C-p, C-f, C
 - Sélectionner manuellement certaines cases à cocher.
 - Remplir toutes les cases à cocher avec un "X" en utilisant l'édition par
   rectangle.
-- Effacer toutes les cases à cocher à l'aide d'une macro.
+- À l'aide d'une macro, effacer toutes les cases à cocher et mettre en
+  minuscules le premier mot.
 - Reformatter le paragraphe avec ~M-q~.
 - Examiner les modifications dans Git.
 - Effectuer un /commit/.
 - Exporter au format HTML (BigBlow et ReadTheDoc) / PDF.
 - Réaliser un /commit/ pour les fichiers HTML et PDF.
-

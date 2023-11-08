@@ -30,11 +30,6 @@ const APP_PATH="cafmweb"
 
 Vous avez navigué à travers le buffer en utilisant les commandes de déplacement.
 
-*** Solution                                                          :noexport:
-
-Utilisez les commandes de déplacement (par exemple, ~C-n~, ~C-p~, ~C-f~, ~C-b~, ~M-f~,
-~M-b~, etc.) pour naviguer dans le buffer.
-
 ** Sélectionner et copier du texte dans le presse-papier
 
 *** Description
@@ -52,11 +47,6 @@ Sélectionnez la phrase :
 
 La phrase est sélectionnée et copiée dans le presse-papier.
 
-*** Solution                                                          :noexport:
-
-Utilisez les commandes de déplacement pour sélectionner la phrase et la copier
-dans le presse-papier avec ~M-w~.
-
 ** Coller du texte
 
 *** Description
@@ -70,10 +60,6 @@ Collez la phrase dans ce /buffer/.
 *** Résultat attendu
 
 La phrase est collée dans ce buffer.
-
-*** Solution                                                          :noexport:
-
-Collez la phrase avec ~C-y~.
 
 ** Trouver une chaîne de caractères
 
@@ -89,11 +75,6 @@ trouvez la chaîne de caractères "amet" (x3).
 *** Résultat attendu
 
 Les occurrences de "amet" sont trouvées.
-
-*** Solution                                                          :noexport:
-
-Utilisez ~M-x isearch-forward~ (ou ~C-s~) pour rechercher "amet" et appuyez sur ~C-s~
-pour trouver les occurrences suivantes.
 
 ** Recherche incrémentale simple
 
@@ -116,10 +97,6 @@ Trouvez toutes les occurrences de "amet" et remplacez-les par "est".
 *** Résultat attendu
 
 Toutes les occurrences de "amet" sont remplacées par "est".
-
-*** Solution                                                          :noexport:
-
-Utilisez ~M-x query-replace~ (ou ~M-%~) pour effectuer le remplacement.
 
 ** Remplacement global
 
@@ -153,10 +130,6 @@ Utilisez ~C-x C-f~, naviguez jusqu'au fichier, copiez le chemin complet.
 
 Le chemin complet du fichier est copié.
 
-*** Solution                                                          :noexport:
-
-Tapez ~C-x C-f <down> C-a C-k~ pour copier le chemin complet.
-
 ** Indenter ce code
 
 *** Description
@@ -182,10 +155,6 @@ console.log(factorial(5));
 *** Résultat attendu
 
 Le code est indenté.
-
-*** Solution                                                          :noexport:
-
-Utilisez les commandes d'indentation appropriées pour indenter le code.
 
 ** Indenter tout le texte vers la gauche
 
@@ -269,11 +238,6 @@ date_escalation_fix,time_escalation_fix,date_esc_fix_orig,time_esc_fix_orig,esca
 - À la fin de l'exercice, rédigez un bref rapport indiquant les éventuelles
   incohérences que vous avez trouvées et expliquez comment vous les avez
   identifiées.
-
-*** Solution                                                          :noexport:
-
-1. Vérifier avec C-s C-w... que les 2 SELECT physiques sont identiques
-2. Faire des manipulations sur le nom des colonnes de la vue
 
 * 101.2 - Fonctionnalités avancées
 
@@ -663,19 +627,10 @@ Utilisez la commande ~C-x d~ pour copier le nom d'un fichier.
 
 Le nom du fichier est copié.
 
-*** Solution                                                          :noexport:
-
-Utilisez ~C-x d~ pour accéder au répertoire Dired et copier le nom du fichier avec
-~w~.
-
 ** Copier le chemin complet d'un fichier (2 - via commande Dired)
 
 - Trouver une solution plus académique, en regardant ce que fait la touche ~w~
   dans Dired.
-
-*** Solution                                                          :noexport:
-
-C-u 0 w
 
 * 202.1 - Outils supplémentaires
 

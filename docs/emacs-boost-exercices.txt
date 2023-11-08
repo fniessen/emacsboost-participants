@@ -1,7 +1,10 @@
 #+TITLE:     Emacs Boost -- Excercices
 #+AUTHOR:    Fabrice Niessen
+#+DATE:      2023-11-08
+#+OPTIONS:   toc:2 H:2
+#+SETUPFILE: ~/org/theme-bigblow.setup
 
-* J1.1 - Bases d'Emacs
+* 101.1 - Bases d'Emacs
 
 ** Parcourir un buffer
 
@@ -301,7 +304,7 @@ Placer un marqueur (~C-SPC~) au début de la zone de texte à modifier.
 Se déplacer vers la fin de la zone de texte, puis utiliser ~M-%~ pour effectuer
 un remplacement uniquement dans cette sélection.
 
-* J1.2 - Fonctionnalités avancées
+* 101.2 - Fonctionnalités avancées
 
 ** Filtrage de lignes d'erreurs
 
@@ -398,9 +401,9 @@ const APP_PATH="cafmweb"
 
 Ajouter un espace avant et après l'égal, et insérer un point-virgule à la fin.
 
-* J1.2 - Fonctionnalités avancées / Édition de bloc (rectangle)
+* 101.2 - Fonctionnalités avancées / Édition de bloc (rectangle)
 
-* J1.2 - Fonctionnalités avancées / Macros
+* 101.2 - Fonctionnalités avancées / Macros
 
 Exemples concrets où l'utilisation de macros est particulièrement utile, tels
 que l'alignement de texte, les transformations de code, la modification de
@@ -601,7 +604,7 @@ commande
 Veuillez noter qu'il y a un caractère de tabulation entre le numéro et
 l'instruction. Vous devez le remplacer par un espace standard.
 
-* J1.3 - Aide, configuration et personnalisation
+* 101.3 - Aide, configuration et personnalisation
 
 ** Aide
 
@@ -690,7 +693,7 @@ Le résultat de l'évaluation, 3, devrait s'afficher dans la zone d'écho.
 - Déplacez le curseur sur différents symboles et observez la mise en évidence
   automatique.
 
-* J1.4 - Dired, Helm et intégration Shell
+* 101.4 - Dired, Helm et intégration Shell
 
 ** Copier le nom d'un fichier
 
@@ -720,9 +723,9 @@ Utilisez ~C-x d~ pour accéder au répertoire Dired et copier le nom du fichier 
 
 C-u 0 w
 
-* J2.1 - Outils supplémentaires
+* 202.1 - Outils supplémentaires
 
-* J2.2 - Git et Projectile
+* 202.2 - Git et Projectile
 
 ** vc-dir
 
@@ -778,7 +781,7 @@ un dépôt de versionnement. Les exercices sont conçus pour guider les étudian
 - Changement de dépôt : Utilisez vc-dir pour naviguer vers un autre répertoire
   de projet sous contrôle de version et explorez son état.
 
-* J2.3 et J2.4 - Org mode
+* 202.3/4 - Org mode
 
 ** Macros et org-mode
 
@@ -832,20 +835,3 @@ Solution : Utilisez les commandes de déplacement (par exemple, C-n, C-p, C-f, C
 - Exporter au format HTML (BigBlow et ReadTheDoc) / PDF.
 - Réaliser un /commit/ pour les fichiers HTML et PDF.
 
-* J3 - Formation avancée
-
-** Recherche et remplacement
-
-- Rechercher tous les lignes commençant par "re" en entrant ^re\w*.
-
-- Remplacer toutes les occurrences de "chat" ou "chien" par "animal" en entrant
-  (chat\|chien) suivi de animal.
-** TODO Aligner ces affectations avec le signe égal
-
-#+begin_src js
-var1 = 10;
-variable2 = 20;
-v3 = 5;
-#+end_src
-
-Regexp : ~\(\s-*\)=~

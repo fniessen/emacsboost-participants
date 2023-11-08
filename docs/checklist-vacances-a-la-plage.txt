@@ -1,0 +1,55 @@
+#+TITLE:     Vacances à la plage
+#+AUTHOR:    Fabrice Niessen
+#+DATE:      2023-07-08
+#+OPTIONS:   toc:2 H:2
+#+LATEX_CLASS: beamer
+#+LATEX_CLASS_OPTIONS: [t]
+#+SETUPFILE: ~/org/theme-bigblow.setup
+#+PROPERTY:  BEAMER_THEME Berlin
+
+* Objectif
+
+N'oublions pas que l'essentiel est de profiter de chaque instant ensemble, de
+nous détendre et de créer des souvenirs inoubliables. Alors, préparons nos
+valises avec soin et partons en vacances l'esprit tranquille !
+
+* Préparation des bagages
+
+Pour que tout se déroule sans stress et que nous puissions profiter pleinement
+de notre séjour, voici quelques conseils.
+
+** TODO Suggestions
+
+- Trions les vêtements par type et par couleur pour faciliter le rangement.
+- Pensons aux activités prévues et apportons tout ce dont nous aurons besoin.
+- Vérifions les restrictions de bagages de la compagnie aérienne.
+
+** STRT Checklist
+
+Checklist des *choses à ne pas oublier* d'emporter dans nos bagages :
+
+- [ ] Maillots de bain
+- [ ] Chapeau ou casquette
+- [X] Lunettes de soleil
+- [X] Crème solaire
+- [X] Brosse à dents / dentifrice
+- [ ] Chargeur de téléphone portable
+- [ ] Billets de train
+- [ ] Réservations d'hôtel
+- [X] Argent liquide
+- [ ] Parapluie (au cas où la météo jouerait des tours)
+
+* Astuces pour des vacances réussies
+
+- Profitons de chaque instant ensemble.
+- Laissons-nous aller et ne nous soucions pas du reste.
+- Créons des souvenirs inoubliables.
+
+* Pour les enfants
+
+Lors de nos déplacements, il est essentiel d'emporter des activités appropriées
+à l'âge de nos enfants pour les divertir pendant les trajets ou les temps
+d'attente. Assurons-nous également d'avoir en quantité suffisante de la
+nourriture et des boissons pour répondre à leurs besoins. Enfin, n'oublions pas
+d'emporter avec nous les médicaments ou traitements médicaux nécessaires pour
+nos enfants, afin de garantir leur bien-être pendant notre voyage.

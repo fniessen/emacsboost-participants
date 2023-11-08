@@ -1,0 +1,851 @@
+#+TITLE:     Emacs Boost -- Excercices
+#+AUTHOR:    Fabrice Niessen
+
+* J1.1 - Bases d'Emacs
+
+** Parcourir un buffer
+
+*** Description
+
+Utilisez les commandes de déplacement du curseur pour parcourir le buffer.
+
+*** Instructions
+
+Parcourez le texte suivant en utilisant les commandes de déplacement du curseur.
+
+#+begin_quote
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus quam
+quis mi scelerisque, sed tristique eros semper. Sed lacinia, eros sed luctus
+ultricies, tortor enim iaculis enim, sed facilisis eros quam sit amet nisl.
+#+end_quote
+
+#+begin_src js
+const APP_PATH="cafmweb"
+#+end_src
+
+*** Résultat attendu
+
+Vous avez navigué à travers le buffer en utilisant les commandes de déplacement.
+
+*** Solution                                                          :noexport:
+
+Utilisez les commandes de déplacement (par exemple, ~C-n~, ~C-p~, ~C-f~, ~C-b~, ~M-f~,
+~M-b~, etc.) pour naviguer dans le buffer.
+
+** Sélectionner et copier du texte dans le presse-papier
+
+*** Description
+
+Utilisez les commandes de déplacement du curseur pour sélectionner une phrase
+spécifique.
+
+*** Instructions
+
+Sélectionnez la phrase :
+
+"Donec faucibus quam quis mi scelerisque, sed tristique eros semper."
+
+*** Résultat attendu
+
+La phrase est sélectionnée et copiée dans le presse-papier.
+
+*** Solution                                                          :noexport:
+
+Utilisez les commandes de déplacement pour sélectionner la phrase et la copier
+dans le presse-papier avec ~M-w~.
+
+** Coller du texte
+
+*** Description
+
+Collez du texte.
+
+*** Instructions
+
+Collez la phrase dans ce /buffer/.
+
+*** Résultat attendu
+
+La phrase est collée dans ce buffer.
+
+*** Solution                                                          :noexport:
+
+Collez la phrase avec ~C-y~.
+
+** Trouver une chaîne de caractères
+
+*** Description
+
+Trouvez des occurrences d'une chaîne de caractères spécifique dans le /buffer/.
+
+*** Instructions
+
+Retournez au début du /buffer/ en utilisant les commandes de déplacement, puis
+trouvez la chaîne de caractères "amet" (x3).
+
+*** Résultat attendu
+
+Les occurrences de "amet" sont trouvées.
+
+*** Solution                                                          :noexport:
+
+Utilisez ~M-x isearch-forward~ (ou ~C-s~) pour rechercher "amet" et appuyez sur ~C-s~
+pour trouver les occurrences suivantes.
+
+** Rechercher et remplacer du texte
+
+*** Description
+
+Trouvez et remplacez des occurrences d'une chaîne de caractères dans le /buffer/.
+
+*** Instructions
+
+Trouvez toutes les occurrences de "amet" et remplacez-les par "est".
+
+*** Résultat attendu
+
+Toutes les occurrences de "amet" sont remplacées par "est".
+
+*** Solution                                                          :noexport:
+
+Utilisez ~M-x query-replace~ (ou ~M-%~) pour effectuer le remplacement.
+
+** Naviguer, supprimer, sauver
+
+*** Description
+
+Effectuez diverses actions sur le texte, telles que la sélection, la copie, la
+suppression et l'enregistrement.
+
+*** Instructions
+
+Sélectionnez le paragraphe :
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec faucibus quam
+quis mi scelerisque, sed tristique eros semper. Sed lacinia, eros sed luctus
+ultricies, tortor enim iaculis enim, sed facilisis eros quam sit amet nisl.
+
+Copiez-le, créez une nouvelle ligne, collez le
+paragraphe copié, supprimez un mot, et enregistrez le fichier.
+
+*** Résultat attendu
+
+Les actions mentionnées sont effectuées.
+
+*** Solution                                                          :noexport:
+
+Suivez les instructions pour accomplir chaque action.
+
+** Copier le chemin complet d'un fichier (1 - via find-file)
+
+*** Description
+
+Copiez le chemin complet d'un fichier en utilisant find-file.
+
+*** Instructions
+
+Utilisez ~C-x C-f~, naviguez jusqu'au fichier, copiez le chemin complet.
+
+*** Résultat attendu
+
+Le chemin complet du fichier est copié.
+
+*** Solution                                                          :noexport:
+
+Tapez ~C-x C-f <down> C-a C-k~ pour copier le chemin complet.
+
+** Indenter ce code
+
+*** Description
+
+Indentez le code présent dans un tampon.
+
+*** Instructions
+
+Indentez le code fourni :
+
+#+begin_src js
+function factorial(n) {
+if (n === 0) {
+return 1;
+} else {
+return n * factorial(n - 1);
+}
+}
+
+console.log(factorial(5));
+#+end_src
+
+*** Résultat attendu
+
+Le code est indenté.
+
+*** Solution                                                          :noexport:
+
+Utilisez les commandes d'indentation appropriées pour indenter le code.
+
+** Indenter tout le texte vers la gauche
+
+#+begin_src text
+1234567890
+    text1
+    text2
+#+end_src
+
+#+begin_src text
+1234567890
+    text1
+        text2
+#+end_src
+
+** Arugment universel
+
+- Que fait ~C-u C-u C-n~ ?
+- Quelle est l'autre façon de l'écrire ?
+- Que fait ~C-u M-x indent-rigidly~ ?
+
+** Vérification de la Cohérence de la Vue SQL
+
+*** Description
+
+Cet exercice a pour objectif de vous familiariser avec la vérification de la
+cohérence d'une vue SQL. Vous allez travailler avec une vue de base de données
+qui combine les données de deux tables, et vous devrez identifier toute
+incohérence potentielle dans la vue.
+
+*** Instructions
+
+- Examinez attentivement la vue SQL suivante. Elle combine les données de deux tables, "activity_log" et "hactivity_log".
+
+#+begin_src sql
+CREATE OR REPLACE FORCE EDITIONABLE VIEW ACTIVITY_LOG_HACTIVITY_LOG
+(AC_ID, ACT_QUEST, ACTION_TITLE, ACTIVITY_LOG_ID, ACTIVITY_TYPE, APPROVED_BY, ASSESSED_BY, ASSESSMENT_ID, ASSIGNED_TO, AUTOCREATE_WR, BL_ID, CAPITAL_PROGRAM, CAUSE_TYPE, CB_UNITS_ID, CF_ID, COMMENTS, COMPLETED_BY, COND_PRIORITY, COND_VALUE, CONTACT_ID, COPIED_FROM, COST_ACT_CAP, COST_ACTUAL, COST_CAT_ID, COST_EST_CAP, COST_EST_DESIGN_CAP, COST_EST_DESIGN_EXP, COST_ESTIMATED, COST_TO_REPLACE, CREATED_BY, CSI_ID, DATE_APPROVED, DATE_ASSESSED, DATE_CLOSED, DATE_COMPLETED, DATE_ESC_COMP_ORIG, DATE_ESC_RESP_ORIG, DATE_ESCALATION_COMPLETION, DATE_ESCALATION_RESPONSE, DATE_INSTALLED, DATE_ISSUED, DATE_PLANNED_END, DATE_PLANNED_FOR, DATE_REQUESTED, DATE_REQUIRED, DATE_REVIEW, DATE_SCHEDULED, DATE_SCHEDULED_END, DATE_STARTED, DATE_VERIFIED, DESCRIPTION, DISPATCHER, DOC, DOC1, DOC2, DOC3, DOC4, DOC_FILE1, DOC_FILE2, DOC_FILE3, DP_ID, DURATION, DURATION_ACT, DURATION_EST_BASELINE, DV_ID, DWGNAME, EHANDLE, EQ_ID, ESCALATED_COMPLETION, ESCALATED_RESPONSE, FL_ID, FUND_ID, GEO_OBJECTID, GP_ID, HCM_ABATE_BY, HCM_CLASS1_ID, HCM_CLASS2_ID, HCM_CLASS3_ID, HCM_COND_ID, HCM_ESTIMATE_NUM, HCM_FITTINGS_NUM, HCM_FRIABLE, HCM_HAREA_ID, HCM_HAZ_RANK_ID, HCM_HAZ_RATING_ID, HCM_HAZ_STATUS_ID, HCM_ID, HCM_IS_HAZARD, HCM_LABELED, HCM_LOC_NOTES, HCM_LOC_TYP_ID, HCM_PENDING_ACT, HCM_PIPE_CNT, HCM_QTY, HOURS_ACTUAL, HOURS_EST_BASELINE, HOURS_EST_DESIGN, INCIDENT_ID, LAT, LOCATION, LOCATION_ID, LON, LS_ID, MANAGER, MO_ID, OP_ID, OPTION1, OPTION2, OWNER_TYPE, PARCEL_ID, PCT_COMPLETE, PHONE_REQUESTOR, PMP_ID, PO_ID, PR_ID, PREDECESSORS, PRIORITY, PROB_TYPE, PROJ_PHASE, PROJECT_ID, QTY_LIFE_EXPCT, QUESTIONNAIRE_ID, REC_ACTION, RECURRING_RULE, REG_PROGRAM, REG_REQUIREMENT, REGCOMP_ID, REGULATION, RELATED_ID, REPAIR_TYPE, REQUESTOR, REQUESTOR_TYPE, RESP_ID, RM_ID, SATISFACTION, SATISFACTION_NOTES, SITE_ID, START_OFFSET, STATUS, STEP_STATUS, SUPERVISOR, SUST_PRIORITY, TA_ID, TIME_ESC_COMP_ORIG, TIME_ESC_RESP_ORIG, TIME_ESCALATION_COMPLETION, TIME_ESCALATION_RESPONSE, TIME_REQUESTED, TIME_REQUIRED, TR_ID, VERIFIED_BY, VN_ID, WBS_ID, WO_ID, WORK_PKG_ID, WORK_TEAM_ID, WR_ID, ACTIVITY_RETURN, ACTIVITY_ROI, BUILDER_DIRECT_RATING_ID, CONDITION_INDEX, CRITICALITY, CSI_ID1, CSI_ID2, CSI_ID3, SOURCE_DATE_UPDATE, SOURCE_TIME_UPDATE, SOURCE_FEED_COMMENTS, SOURCE_RECORD_ID, SOURCE_STATUS, SOURCE_TABLE, SYSTEM_BL_ID, SOURCE_SYSTEM_ID, QUESTIONNAIRE_ID_EXT, IMPACT_ASSETS, IMPACT_OPERATIONS, IMPACT_PEOPLE, SIRA, DATE_ESCALATION_FIX, TIME_ESCALATION_FIX, DATE_ESC_FIX_ORIG, TIME_ESC_FIX_ORIG, ESCALATED_FIX, BUDGET_TYPE, REASON_TO_CLOSE, REFERENCE_OF_THE_NEW_WR, AR_CONTRACT_PO_ID)
+AS
+    SELECT ac_id,act_quest,action_title,activity_log_id,activity_type,approved_by,assessed_by,assessment_id,assigned_to,autocreate_wr,bl_id,capital_program,cause_type,cb_units_id,
+cf_id,comments,completed_by,cond_priority,cond_value,contact_id,copied_from,cost_act_cap,cost_actual,cost_cat_id,cost_est_cap,cost_est_design_cap,cost_est_design_exp,cost_estimated,
+cost_to_replace,created_by,csi_id,date_approved,date_assessed,date_closed,date_completed,date_esc_comp_orig,date_esc_resp_orig,date_escalation_completion,date_escalation_response,
+date_installed,date_issued,date_planned_end,date_planned_for,date_requested,date_required,date_review,date_scheduled,date_scheduled_end,date_started,date_verified,description,
+dispatcher,doc,doc1,doc2,doc3,doc4,doc_file1,doc_file2,doc_file3,dp_id,duration,duration_act,duration_est_baseline,dv_id,dwgname,ehandle,eq_id,escalated_completion,
+escalated_response,fl_id,fund_id,geo_objectid,gp_id,hcm_abate_by,hcm_class1_id,hcm_class2_id,hcm_class3_id,hcm_cond_id,hcm_estimate_num,hcm_fittings_num,hcm_friable,hcm_harea_id,
+hcm_haz_rank_id,hcm_haz_rating_id,hcm_haz_status_id,hcm_id,hcm_is_hazard,hcm_labeled,hcm_loc_notes,hcm_loc_typ_id,hcm_pending_act,hcm_pipe_cnt,hcm_qty,hours_actual,
+hours_est_baseline,hours_est_design,incident_id,lat,location,location_id,lon,ls_id,manager,mo_id,op_id,option1,option2,owner_type,parcel_id,pct_complete,phone_requestor,
+pmp_id,po_id,pr_id,predecessors,priority,prob_type,proj_phase,project_id,qty_life_expct,questionnaire_id,rec_action,recurring_rule,reg_program,reg_requirement,regcomp_id,
+regulation,related_id,repair_type,requestor,requestor_type,resp_id,rm_id,satisfaction,satisfaction_notes,site_id,start_offset,status,step_status,supervisor,sust_priority,
+ta_id,time_esc_comp_orig,time_esc_resp_orig,time_escalation_completion,time_escalation_response,time_requested,time_required,tr_id,verified_by,vn_id,wbs_id,wo_id,work_pkg_id,
+work_team_id,wr_id,activity_return,activity_roi,builder_direct_rating_id,condition_index,criticality,csi_id1,csi_id2,csi_id3,source_date_update,source_time_update,
+source_feed_comments,source_record_id,source_status,source_table,system_bl_id,source_system_id,questionnaire_id_ext,impact_assets,impact_operations,impact_people,sira,
+date_escalation_fix,time_escalation_fix,date_esc_fix_orig,time_esc_fix_orig,escalated_fix,budget_type,reason_to_close,reference_of_the_new_wr,ar_contract_po_id,
+    remark_id
+    FROM activity_log
+UNION ALL
+    SELECT ac_id,act_quest,action_title,activity_log_id,activity_type,approved_by,assessed_by,assessment_id,assigned_to,autocreate_wr,bl_id,capital_program,cause_type,cb_units_id,
+cf_id,comments,completed_by,cond_priority,cond_value,contact_id,copied_from,cost_act_cap,cost_actual,cost_cat_id,cost_est_cap,cost_est_design_cap,cost_est_design_exp,cost_estimated,
+cost_to_replace,created_by,csi_id,date_approved,date_assessed,date_closed,date_completed,date_esc_comp_orig,date_esc_resp_orig,date_escalation_completion,date_escalation_response,
+date_installed,date_issued,date_planned_end,date_planned_for,date_requested,date_required,date_review,date_scheduled,date_scheduled_end,date_started,date_verified,description,
+dispatcher,doc,doc1,doc2,doc3,doc4,doc_file1,doc_file2,doc_file3,dp_id,duration,duration_act,duration_est_baseline,dv_id,dwgname,ehandle,eq_id,escalated_completion,
+escalated_response,fl_id,fund_id,geo_objectid,gp_id,hcm_abate_by,hcm_class1_id,hcm_class2_id,hcm_class3_id,hcm_cond_id,hcm_estimate_num,hcm_fittings_num,hcm_friable,hcm_harea_id,
+hcm_haz_rank_id,hcm_haz_rating_id,hcm_haz_status_id,hcm_id,hcm_is_hazard,hcm_labeled,hcm_loc_notes,hcm_loc_typ_id,hcm_pending_act,hcm_pipe_cnt,hcm_qty,hours_actual,
+hours_est_baseline,hours_est_design,incident_id,lat,location,location_id,lon,ls_id,manager,mo_id,op_id,option1,option2,owner_type,parcel_id,pct_complete,phone_requestor,
+pmp_id,po_id,pr_id,predecessors,priority,prob_type,proj_phase,project_id,qty_life_expct,questionnaire_id,rec_action,recurring_rule,reg_program,reg_requirement,regcomp_id,
+regulation,related_id,repair_type,requestor,requestor_type,resp_id,rm_id,satisfaction,satisfaction_notes,site_id,start_offset,status,step_status,supervisor,sust_priority,
+ta_id,time_esc_comp_orig,time_esc_resp_orig,time_escalation_completion,time_escalation_response,time_requested,time_required,tr_id,verified_by,vn_id,wbs_id,wo_id,work_pkg_id,
+work_team_id,wr_id,activity_return,activity_roi,builder_direct_rating_id,condition_index,criticality,csi_id1,csi_id2,csi_id3,source_date_update,source_time_update,
+source_feed_comments,source_record_id,source_status,source_table,system_bl_id,source_system_id,questionnaire_id_ext,impact_assets,impact_operations,impact_people,sira,
+date_escalation_fix,time_escalation_fix,date_esc_fix_orig,time_esc_fix_orig,escalated_fix,budget_type,reason_to_close,reference_of_the_new_wr,ar_contract_po_id,
+    remark_id
+    FROM hactivity_log;
+#+end_src
+
+- Votre tâche consiste à vérifier la cohérence de cette vue en vous assurant que
+  les colonnes définies dans la vue et sélectionnées dans les tables
+  ~activity_log~ et ~hactivity_log~ sont identiques.
+
+- Analysez les noms de colonnes et identifiez toute incohérence, telle qu'une
+  faute de frappe dans les noms de colonnes.
+
+- À la fin de l'exercice, rédigez un bref rapport indiquant les éventuelles
+  incohérences que vous avez trouvées et expliquez comment vous les avez
+  identifiées.
+
+*** Solution                                                          :noexport:
+
+1. Vérifier avec C-s C-w... que les 2 SELECT physiques sont identiques
+2. Faire des manipulations sur le nom des colonnes de la vue
+
+** Recherche simple
+
+Rechercher la première occurrence du mot "exemple" dans le buffer.
+
+Rechercher les occurrences suivantes du mot "exemple".
+
+Rechercher config, configurer, configuration.
+
+** Recherche incrémentale
+
+Commencez à taper "config" pour trouver toutes les occurrences de ce mot dans
+le buffer en temps réel.
+
+** Remplacement basique
+
+Remplacer, une par une, toutes les occurrences du mot "vieux" par "nouveau".
+
+** Remplacement global
+
+Remplacer, d'un coup (sans devoir confirmer chaque remplacement), toutes les
+occurrences de "jour" par "nuit".
+
+** Utilisation des marqueurs pour une sélection fine
+
+Placer un marqueur (~C-SPC~) au début de la zone de texte à modifier.
+
+Se déplacer vers la fin de la zone de texte, puis utiliser ~M-%~ pour effectuer
+un remplacement uniquement dans cette sélection.
+
+* J1.2 - Fonctionnalités avancées
+
+** Filtrage de lignes d'erreurs
+
+- Travailler sur une portion de texte spécifique extraite du journal (/log/)
+  suivant :
+
+#+begin_src ablog
+[DEBUG][2023-10-06 12:52:08,843][RestrictionParsedImpl] - [Restriction is applicable, generated SQL=[afm_docvers.table_name = 'afm_scmpref' AND afm_docvers.field_name = 'doc_logo_dark' AND afm_docvers.pkey_value = '0']]
+[DEBUG][2023-10-06 12:52:08,843][DbConnectionImpl] - [SELECT MAX (version) FROM afm_docvers WHERE (afm_docvers.table_name = 'afm_scmpref' AND afm_docvers.field_name = 'doc_logo_dark' AND afm_docvers.pkey_value = '0'), database=[data]]
+[DEBUG][2023-10-06 12:52:08,848][DbConnectionImpl] - [***ROLLBACK***]
+[ERROR][2023-10-06 12:52:08,861][ExceptionHandlerBase] - [The system manager has removed all previous versions of this document from the server. Please notify your system manager. Use 'Delete Document' button to clear the document storage.]
+[ERROR][2023-10-06 12:52:08,869][ExceptionHandlerBase] - [Request =[org.springframework.security.web.context.HttpSessionSecurityContextRepository$SaveToSessionRequestWrapper@5b1779be], session=[0AE4A97CD2058A598ACE2B38D3751552]]
+[DEBUG][2023-10-06 12:52:08,873][ContextFilter] - [---------- Request: processing finished]
+[DEBUG][2023-10-06 12:52:08,957][FileHelper] - [realContextPath=[/archibus]]
+[DEBUG][2023-10-06 12:52:08,966][RenderingFilter] - [Rendering mode]
+#+end_src
+
+- Supprimer toutes les lignes de type DEBUG.
+- Conserver uniquement les lignes d'erreur (ERROR).
+
+** Collage
+
+Insérer la phrase "Donec faucibus quam..." (actuellement dans le presse-papier)
+dans un nouveau tampon que vous nommerez "exemple".
+
+** Remplacement avec ^J
+
+Transformer :
+
+#+begin_src shell
+# Remove lines containing '.git/' from the temporary file.
+grep -v '.git/' "$temp_file" > "$temp_file.tmp" && mv "$temp_file.tmp" "$LOG_FILE"
+
+# Remove lines containing 'ACCESS,ISDIR' from the temporary file.
+grep -v 'ACCESS,ISDIR' "$temp_file" > "$temp_file.tmp" && mv "$temp_file.tmp" "$LOG_FILE"
+
+# Deduplicate and clean the temporary file.
+sort -u -o "$LOG_FILE" "$temp_file"
+
+# Remove "ACCESS" from paths in the temporary file.
+sed 's/\([^ ]*\) ACCESS \([^ ]*\)/\1\2/g' "$temp_file" > "$temp_file.tmp" && mv "$temp_file.tmp" "$LOG_FILE"
+
+# Remove the './' prefix from lines in the temporary file.
+sed 's#^\./##' "$temp_file" > "$temp_file.tmp" && mv "$temp_file.tmp" "$LOG_FILE"
+#+end_src
+
+en
+
+#+begin_src shell
+# Remove lines containing '.git/' from the temporary file.
+grep -v '.git/' "$temp_file" > "$temp_file.tmp" \
+    && mv "$temp_file.tmp" "$LOG_FILE"
+
+# Remove lines containing 'ACCESS,ISDIR' from the temporary file.
+grep -v 'ACCESS,ISDIR' "$temp_file" > "$temp_file.tmp" \
+    && mv "$temp_file.tmp" "$LOG_FILE"
+
+# Deduplicate and clean the temporary file.
+sort -u -o "$LOG_FILE" "$temp_file"
+
+# Remove "ACCESS" from paths in the temporary file.
+sed 's/\([^ ]*\) ACCESS \([^ ]*\)/\1\2/g' "$temp_file" > "$temp_file.tmp" \
+    && mv "$temp_file.tmp" "$LOG_FILE"
+
+# Remove the './' prefix from lines in the temporary file.
+sed 's#^\./##' "$temp_file" > "$temp_file.tmp" \
+    && mv "$temp_file.tmp" "$LOG_FILE"
+#+end_src
+
+Et vice-versa.
+
+** Recherche et remplacement dans plusieurs fichiers
+
+Utiliser ~M-x find-name-dired~ pour rechercher tous les fichiers portant un
+nom spécifique.
+
+Ensuite, utiliser ~M-x dired-do-query-replace-regexp~ pour effectuer un
+remplacement avec expression régulière dans tous ces fichiers.
+
+** Chercher tous les fichiers qui ont string1 et string2 sur une même ligne
+
+- Faire un rgrep pour voir toutes les lignes avec string1
+- Faire un C-s pour voir string2 (permet n'importe quel ordre; sinon on aurait
+  fait une regexp)
+
+Éventuellement, faire une modif (remplacer string2 par autre chose) puis
+rafraîchir le buffer Grep.
+
+** Rechercher un string
+
+#+begin_src js
+const APP_PATH="cafmweb"
+#+end_src
+
+Ajouter un espace avant et après l'égal, et insérer un point-virgule à la fin.
+
+* J1.2 - Fonctionnalités avancées / Édition de bloc (rectangle)
+
+* J1.2 - Fonctionnalités avancées / Macros
+
+Exemples concrets où l'utilisation de macros est particulièrement utile, tels
+que l'alignement de texte, les transformations de code, la modification de
+formats de fichier, etc.
+
+** Commenter plusieurs lignes de code
+
+#+begin_src python
+print("Hello")
+print("World")
+print("Emacs")
+#+end_src
+
+#+begin_src python
+# print("Hello")
+# print("World")
+# print("Emacs")
+#+end_src
+
+- Le faire sans utiliser de macro
+- Le faire en utilisant une macro
+
+** Transformation de noms de fichiers
+
+#+begin_src shell
+File One.txt
+File Two.docx
+File Three.pdf
+#+end_src
+
+#+begin_src shell
+file_one.txt
+file_two.docx
+file_three.pdf
+#+end_src
+
+** Mettre en forme un bloc de texte
+
+Transforme le texte ~Texte à formater~ en ~<p class="important">Texte
+à formater</p>~.
+
+** Commande avec 5 noms de fichiers par ligne
+
+*** Description
+
+La commande ci-dessous doit être réécrite pour avoir 5 noms de fichiers par
+ligne, ce qui facilite la lecture et le comptage de la liste des fichiers.
+
+#+begin_example
+convert geo_region hactivity_log hactivity_logmonth hactivity_logmonth
+    helpdesk_roles helpdesk_sla_priority helpdesk_sla_request
+    helpdesk_sla_response helpdesk_sla_steps helpdesk_step_log
+    hhelpdesk_step_log hwo hwr hwr_month hwr_other hwrcf hwrcfana hwrpt hwrsum
+    hwrtl hwrtr hwrtt it messages other_rs pd plantype_groups pmforecast_tr
+    pmforecast_trm pmgen pmgp pmp pmps pmpspt pmpstr pmpstt pmpsum pmressum pms
+    pmsd po po_line pr probtype project pt pt_store_loc pt_store_loc_pt pv
+    quest_answer_ext questionnaire questionnaire_ext questions regloc regn
+    repairty resavail rm rmpct rmstd servcont site state supply_req tl tr tt vn
+    warranty wo wohwo work_team workflow_substitutes wr wr_other wr_other_sync
+    wr_step_waiting wrcf wrhwr wrpt wrtl wrtr wrtt wrvi;
+#+end_example
+
+*** Instructions
+
+- Ajoutez les noms de fichiers par groupe de 5 pour une meilleure organisation.
+
+- Placez un caractère d'échappement (~\~) à la fin de chaque ligne pour continuer
+  la commande sur la ligne suivante.
+
+- Répétez ce processus pour l'ensemble de la liste des fichiers :
+
+  #+begin_example
+  convert file1 file2 file3 file4 file5 \
+      file6 file7 file8 file9 file10 \
+      file11 file12 file13 file14 file15 \
+      ...
+  #+end_example
+
+- Comptez le nombre de fichiers.
+
+*** Solution
+
+** Remplacement alternatif (1 - manuellement)
+
+Vous disposez d'un texte contenant le caractère ~:~ en plusieurs occurrences :
+
+: C'est simple : suivez les instructions.
+: La clé du succès : la persévérance.
+: L'essentiel dans la vie : le bonheur.
+: L'objectif ultime : l'épanouissement.
+
+Votre tâche consiste à effectuer une recherche dans le texte, localiser chaque
+occurrence du caractère et le remplacer une fois par le caractère ":", puis le
+laisser inchangé, en alternance entre les deux.
+
+Cela signifie que chaque occurrence en position impaire du caractère doit être
+remplacée par l'option de remplacement, tandis que chaque occurrence en position
+paire doit rester inchangée.
+
+Répétez ce processus pour chaque instance du caractère jusqu'à ce
+que toutes les occurrences aient été traitées.
+
+** Remplacement alternatif (2 - macro)
+
+Vous disposez d'un texte contenant le caractère ~:~ en plusieurs occurrences :
+
+: C'est simple : suivez les instructions.
+: La clé du succès : persévérance.
+: L'essentiel dans la vie : le bonheur.
+: L'objectif ultime : l'épanouissement.
+
+Vous devez utiliser une macro pour remplacer chaque ~:~ situé en début de ligne
+par ~-~.
+
+** Remplacement alternatif (3 - édition de bloc)
+
+Vous disposez d'un texte contenant le caractère ~:~ en plusieurs occurrences :
+
+: C'est simple : suivez les instructions.
+: La clé du succès : persévérance.
+: L'essentiel dans la vie : le bonheur.
+: L'objectif ultime : l'épanouissement.
+
+Votre mission consiste à remplacer chaque ~:~ situé en début de ligne par ~-~,
+en effectuant une édition par bloc.
+
+** Manipulation et comptage de lignes
+
+1. Supprimer la partie "nom du fichier" pour ne garder que la partie
+   "répertoire".
+2. Supprimer les lignes avec les fichiers du répertoire =ar-products=.
+3. Compter le nombre de lignes restantes.
+4. Compter le nombre de répertoires différents.
+
+#+begin_src shell
+META-INF/MANIFEST.MF
+WEB-INF/classes/META-INF/cxf/org.apache.cxf.Logger
+WEB-INF/config/afm-projects.xml
+WEB-INF/dwr.xml
+WEB-INF/lib/Tidy-1.jar
+WEB-INF/lib/camel-api-3.11.1.jar
+WEB-INF/web.xml
+schema/ab-core/libraries/amcharts/plugins/export/libs/fabric.js/fabric.min.js
+schema/ab-system/xsd/afm-config.xsd
+schema/ar-products/ar-trades-edit.axvw
+schema/ar-products/change-role.axvw
+schema/ar-products/common/drawing/ar-drawing.axvw
+schema/ar-products/common/list/bl_list.axvw
+schema/ar-products/common/list/rm_list.axvw
+schema/ar-products/common/minipages/bl.axvw
+schema/per-site-hardcoded/ab-fn.axvw
+schema/per-site-hardcoded/ab-products/move/management/ab046522890911897669502.axvw
+schema/per-site-hardcoded/ab-products/project/management/ab078038289006919068694.axvw
+schema/per-site-hardcoded/ab-products/space/inv/ab-afm-ptasks.axvw
+schema/per-site-hardcoded/ab-products/space/pers/ab-rmcat-rm-em.axvw
+schema/per-site-hardcoded/ab-products/space/pers/background/ab-sp-vw-em-exp-covalui.axvw
+schema/per-site-hardcoded/ab-products/workplace/assets/cs-ab-eqstd-eq.axvw
+schema/per-site-hardcoded/ab-transprequ.axvw
+schema/per-site-hardcoded/pagereports/b063169695067764614472.axvw
+#+end_src
+
+** Manipulation de lignes
+
+#+begin_src text
+1.	Navigate to the root directory of the Client repository in Git.
+bashCopy code
+cd /path/to/Client/repository
+2.	Initialize and update the Git submodules.
+csharpCopy code
+git submodule init git submodule update
+3.	Move to the following directory:
+bashCopy code
+cd WEB-INF/config/deploy
+4.	Check out the 'release/v2.0' branch in Git.
+arduinoCopy code
+git checkout release/v2.0
+5.	Place the 'AFM.dpump' file into the 'IMPDP' directory:
+bashCopy code
+cp AFM.dpump db/oracle/oracle19c/volume/IMPDP/
+6.	Launch Docker using the '01_START.sh' script:
+arduinoCopy code
+sh WEB-INF/config/deploy/tools/01_START.sh
+7.	Install Docker Compose:
+Copy code
+sudo apt install docker-compose
+8.	Add your user to the Docker group:
+bashCopy code
+sudo usermod -aG docker ${USER}
+#+end_src
+
+Réorganisez ces instructions en une liste d'instructions claires, avec chaque
+commande Shell reprise dans un bloc de code, du style :
+
+#+begin_src shell
+commande
+#+end_src
+
+Veuillez noter qu'il y a un caractère de tabulation entre le numéro et
+l'instruction. Vous devez le remplacer par un espace standard.
+
+* J1.3 - Aide, configuration et personnalisation
+
+** Aide
+
+- Quelle commande permet de supprimer les lignes en double ?
+- Est-ce que cette commande supprime également les lignes identiques non
+  consécutives ?
+- Les touches ~C-f~ et ~<right>~ invoquent quelle(s) commande(s) ?  Légère
+  différence...
+- Quelle commande est associée aux touches ~C-n~ ou ~<down>~ ?
+
+** Découverte des raccourcis avec which-key
+
+*** Description
+
+Dans cet exercice, vous allez utiliser le package "which-key" pour découvrir et
+explorer les raccourcis clavier dans Emacs. L'objectif est de vous familiariser
+avec cette extension puissante qui facilite la navigation et l'apprentissage des
+commandes dans Emacs.
+
+*** Instructions
+
+- Assurez-vous que le package "which-key" est installé et activé dans votre
+  configuration Emacs.
+
+- Chargez un fichier texte de votre choix.
+
+- Commencez à explorer les raccourcis clavier en appuyant sur différentes
+  touches ou combinaisons de touches. Par exemple, essayez de taper ~C-c~ ou ~C-x~.
+
+- Observez comment "which-key" affiche des /pop-ups/ d'aide contextuelle avec des
+  listes de commandes associées à chaque raccourci que vous tapez.
+
+- Utilisez ces /pop-ups/ pour découvrir de nouvelles commandes que vous ne
+  connaissiez peut-être pas. Essayez d'exécuter quelques-unes de ces commandes
+  pour vous familiariser davantage avec leur fonctionnalité.
+
+- À la fin de l'exercice, réfléchissez à la manière dont "which-key" a amélioré
+  votre expérience d'apprentissage des raccourcis clavier et de navigation dans
+  Emacs.
+
+** Évaluation de code Lisp
+
+*** Instructions
+
+Évaluez le code Emacs Lisp suivant, et puis exécutez la fonction :
+
+#+begin_src emacs-lisp
+(defun write-hello-world-to-echo-area ()
+  (interactive)
+  (message "Hello, world!"))
+#+end_src
+
+*** Résultat attendu
+
+Le texte "Hello, world!" devrait s'afficher dans l'/echo area/.
+
+** Évaluation de code Lisp
+
+*** Instructions
+
+- Tapez l'expression suivante dans le minibuffer :
+
+  ~(+ 1 2)~
+
+- Appuyez sur ~RET~.
+
+*** Résultat attendu
+
+Le résultat de l'évaluation, 3, devrait s'afficher dans la zone d'écho.
+
+** Code
+
+#+begin_src emacs-lisp
+(defun example-function ()
+  (if (condition)
+      (progn
+        (do-something)
+        (do-something-else))
+    (other-action)))
+#+end_src
+
+** AHS
+
+- Ouvrez un fichier source dans Emacs.
+- Activez Auto-Highlight-Symbol avec ~M-x auto-highlight-symbol-mode~.
+- Déplacez le curseur sur différents symboles et observez la mise en évidence
+  automatique.
+
+* J1.4 - Dired, Helm et intégration Shell
+
+** Copier le nom d'un fichier
+
+*** Description
+
+Copiez le nom d'un fichier.
+
+*** Instructions
+
+Utilisez la commande ~C-x d~ pour copier le nom d'un fichier.
+
+*** Résultat attendu
+
+Le nom du fichier est copié.
+
+*** Solution                                                          :noexport:
+
+Utilisez ~C-x d~ pour accéder au répertoire Dired et copier le nom du fichier avec
+~w~.
+
+** Copier le chemin complet d'un fichier (2 - via commande Dired)
+
+- Trouver une solution plus académique, en regardant ce que fait la touche ~w~
+  dans Dired.
+
+*** Solution                                                          :noexport:
+
+C-u 0 w
+
+* J2.1 - Outils supplémentaires
+
+* J2.2 - Git et Projectile
+
+** vc-dir
+
+Série d'exercices pour aider les étudiants à se familiariser avec la commande
+vc-dir dans Emacs, qui permet de visualiser et de gérer les modifications dans
+un dépôt de versionnement. Les exercices sont conçus pour guider les étudiants
+à travers différentes fonctionnalités et actions disponibles dans vc-dir :
+
+- Lancement de vc-dir : Lancez vc-dir pour afficher la liste des fichiers du
+  répertoire courant sous contrôle de version.
+
+- Navigation : Utilisez les touches fléchées pour naviguer dans la liste des
+  fichiers et dossiers affichés dans vc-dir.
+
+- Affichage des modifications : Sélectionnez un fichier dans vc-dir et observez
+  les modifications apportées à ce fichier.
+
+- Voir les différences : Sélectionnez un fichier modifié et utilisez la commande
+  appropriée pour afficher les différences entre la version actuelle et la
+  version précédente de ce fichier.
+
+- Commit : Sélectionnez les fichiers que vous souhaitez committer dans vc-dir et
+  exécutez la commande pour créer un nouveau commit.
+
+- Historique des commits : Accédez à la liste des commits précédents pour un
+  fichier particulier et explorez les messages de commit, les auteurs et les
+  dates.
+
+- Comparaison entre commits : Comparez les différences entre deux commits
+  précédents d'un fichier en utilisant les fonctionnalités fournies par vc-dir.
+
+- Suppression de fichiers : Supprimez un fichier dans vc-dir et vérifiez comment
+  cela affecte l'état de suivi de version.
+
+- Restauration de fichiers : Utilisez vc-dir pour restaurer un fichier à une
+  version précédente.
+
+- Visualisation des branches : Explorez la possibilité d'afficher et de basculer
+  entre différentes branches dans vc-dir.
+
+- Annotation de fichiers : Utilisez vc-dir pour afficher les annotations (blâme)
+  d'un fichier et voir quelles parties ont été modifiées par quelles révisions.
+
+- Comparaison avec une révision : Sélectionnez un fichier et comparez-le avec
+  une révision spécifique pour voir les modifications apportées.
+
+- Gestion des conflits : Créez intentionnellement un conflit dans un fichier,
+  puis utilisez vc-dir pour résoudre le conflit.
+
+- Voir les détails de révision : Explorez la possibilité d'afficher les détails
+  d'une révision, y compris les commentaires de commit et les changements.
+
+- Changement de dépôt : Utilisez vc-dir pour naviguer vers un autre répertoire
+  de projet sous contrôle de version et explorez son état.
+
+* J2.3 et J2.4 - Org mode
+
+** Macros et org-mode
+
+J'aimerais fusionner les deux contenus en un tableau Excel (à exporter).
+
+#+begin_src text
+19 wr
+15 pms
+ 7 wrtr
+ 7 wrhwr-custom
+ 6 wrcf-custom
+ 6 pmsd
+ 5 eq
+ 4 tr
+
+Work Requests
+PM Schedules
+Work Request Trade Requirements
+PM Schedule Dates
+Equipment
+Trades
+#+end_src
+
+Idées :
+- Faire une table du premier set
+- Faire une macro qui recopie sur la bonne ligne
+- On se rend compte qu'il y a moins de lignes en bas, à cause des customs
+- Donc, ajouter deux lignes blanches dans le tableau Org et faire un
+  copier/coller du rectangle pour déplacer de deux lignes vers le haut
+
+** Faire des sections
+
+#+begin_quote
+Description : Utilisez les commandes de déplacement du curseur pour parcourir le buffer.
+Instructions : Parcourez le texte en utilisant les commandes de déplacement du curseur.
+Résultat attendu : Vous avez navigué à travers le buffer en utilisant les commandes de déplacement.
+Solution : Utilisez les commandes de déplacement (par exemple, C-n, C-p, C-f, C-b, M-f, M-b, etc.) pour naviguer dans le buffer.
+#+end_quote
+
+* Pour finir
+
+*** Démo "Checklist vacances à la plage"
+
+- Sélectionner manuellement certaines cases à cocher.
+- Remplir toutes les cases à cocher avec un "X" en utilisant l'édition par
+  rectangle.
+- Effacer toutes les cases à cocher à l'aide d'une macro.
+- Reformatter le paragraphe avec ~M-q~.
+- Examiner les modifications dans Git.
+- Effectuer un /commit/.
+- Exporter au format HTML (BigBlow et ReadTheDoc) / PDF.
+- Réaliser un /commit/ pour les fichiers HTML et PDF.
+
+* J3 - Formation avancée
+
+** Recherche et remplacement
+
+- Rechercher tous les lignes commençant par "re" en entrant ^re\w*.
+
+- Remplacer toutes les occurrences de "chat" ou "chien" par "animal" en entrant
+  (chat\|chien) suivi de animal.
+** TODO Aligner ces affectations avec le signe égal
+
+#+begin_src js
+var1 = 10;
+variable2 = 20;
+v3 = 5;
+#+end_src
+
+Regexp : ~\(\s-*\)=~

@@ -2,8 +2,7 @@
 #+AUTHOR:    Fabrice Niessen
 #+DATE:      2023-07-08
 #+OPTIONS:   toc:2 H:2
-#+LATEX_CLASS: beamer
-#+LATEX_CLASS_OPTIONS: [t]
+#+LATEX_CLASS: article
 #+SETUPFILE: ~/org/theme-bigblow.setup
 #+PROPERTY:  BEAMER_THEME Berlin
 

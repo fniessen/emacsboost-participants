@@ -17,8 +17,8 @@
       (progn
         (kill-ring-save (line-beginning-position) (line-end-position))
         (end-of-line)))
-    (newline)
-    (yank)
+    ;; (newline)
+    ;; (yank)
     (indent-according-to-mode)))
 
 ;; Bind C-S-d to the duplication function.

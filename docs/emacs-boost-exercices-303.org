@@ -1,0 +1,24 @@
+#+TITLE:     Emacs Boost -- Excercices
+#+AUTHOR:    Fabrice Niessen
+#+DATE:      2023-11-08
+#+OPTIONS:   toc:2 H:2
+#+SETUPFILE: ~/org/theme-bigblow.setup
+
+* 303 - Formation avancée
+
+** Recherche et remplacement
+
+- Rechercher tous les lignes commençant par "re" en entrant ^re\w*.
+
+- Remplacer toutes les occurrences de "chat" ou "chien" par "animal" en entrant
+  (chat\|chien) suivi de animal.
+
+** TODO Aligner ces affectations avec le signe égal
+
+#+begin_src js
+var1 = 10;
+variable2 = 20;
+v3 = 5;
+#+end_src
+
+Regexp : ~\(\s-*\)=~

@@ -1,3 +1,5 @@
+* Résultat attendu
+
 | <f11>   | 'undo                                               |
 | C-S-d   | 'lvn-duplicate-line-or-region                       |
 | <f3>    | 'find-file                                          |
@@ -9,7 +11,7 @@
 | <f5>    | 'lvn-toggle-or-delete-window-layout                 |
 | <C-f9>  | 'lvn-jump-to-vc-status-buffer-for-current-directory |
 
-Procédure recommandée :
+* Procédure recommandée
 
 - Tapez ~M-x keep-lines RET set-key RET~ pour filtrer les lignes contenant
   "set-key".

@@ -1,0 +1,31 @@
+| <f11>   | 'undo                                               |
+| C-S-d   | 'lvn-duplicate-line-or-region                       |
+| <f3>    | 'find-file                                          |
+| <f2>    | 'save-buffer                                        |
+| C-S-z   | 'lvn-revert-buffer                                  |
+| C-S-y   | 'lvn-revert-buffer                                  |
+| <S-f12> | 'lvn-kill-current-buffer-no-confirm                 |
+| <f6>    | 'lvn-rotate-or-previous-buffer                      |
+| <f5>    | 'lvn-toggle-or-delete-window-layout                 |
+| <C-f9>  | 'lvn-jump-to-vc-status-buffer-for-current-directory |
+
+Procédure recommandée :
+
+- Tapez ~M-x keep-lines RET set-key RET~ pour filtrer les lignes contenant
+  "set-key".
+- Identifiez le problème avec la ligne contenant "C-f9" car elle s'étend sur
+  deux lignes.
+- Utilisez ~C-s C-w~ pour rechercher et mémoriser le terme pour une recherche
+  ultérieure via la recherche incrémentale.
+- Utilisez ~M-x undo~ pour annuler les changements récents.
+- Accédez à la ligne problématique et regroupez tout sur une seule ligne
+  à partir de la deuxième ligne avec M-^.
+- Réexécutez ~M-x keep-lines RET set-key RET~ pour maintenir uniquement les lignes
+  contenant "set-key".
+- Sélectionnez la région pertinente et convertissez-la en tableau Org.
+- Passez le buffer en mode Org avec la commande appropriée.
+- Supprimez les deux premières colonnes.
+- Effectuez deux remplacements avec ~M-%~ pour remplacer les guillemets et
+  parenthèses fermantes par du vide.
+
+Durée : 1 min 3 s.

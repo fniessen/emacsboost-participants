@@ -1,27 +1,29 @@
-* Projet EmacsBoost
+* Projet EmacsBoost-Participants
 
-Bienvenue dans le projet EmacsBoost ! Ce dépôt GitHub regroupe des ressources et
-des fichiers pour améliorer votre expérience avec Emacs et vous aider
-à maîtriser ses fonctionnalités. Explorez les différents fichiers et dossiers
-disponibles pour maximiser vos compétences dans l'utilisation d'Emacs.
+Bienvenue dans le projet EmacsBoost-Participants !
+
+Ce dépôt GitHub regroupe des ressources et des fichiers pour améliorer votre
+expérience avec Emacs et vous aider à maîtriser ses fonctionnalités. Explorez
+les différents fichiers et dossiers disponibles pour maximiser vos compétences
+dans l'utilisation d'Emacs.
 
 ** Contenu du projet
 
 Entre autres :
 
-2. docs/emacs-boost-exercices.org
+- =docs/emacs-boost-exercices.org=
 
-   Un fichier Org qui propose des exercices pour renforcer vos compétences dans
-   l'utilisation d'EmacsBoost.
+  Un fichier Org qui propose des exercices pour renforcer vos compétences dans
+  l'utilisation d'EmacsBoost.
 
-   Parcourez ces exercices pour améliorer votre maîtrise d'Emacs.
+  Parcourez ces exercices pour améliorer votre maîtrise d'Emacs.
 
-6. lisp/emacsboost.el
+- =lisp/emacsboost.el=
 
-   Le fichier source Emacs Lisp pour la configuration EmacsBoost.
+  Le fichier source Emacs Lisp pour la configuration EmacsBoost.
 
-   Plongez dans le code pour découvrir comment EmacsBoost personnalise Emacs
-   pour une utilisation plus fluide.
+  Plongez dans le code pour découvrir comment EmacsBoost personnalise Emacs pour
+  une utilisation plus fluide.
 
 ** Comment contribuer
 

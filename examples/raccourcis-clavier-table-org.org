@@ -19,7 +19,7 @@ Procédure recommandée :
   ultérieure via la recherche incrémentale.
 - Utilisez ~M-x undo~ pour annuler les changements récents.
 - Accédez à la ligne problématique et regroupez tout sur une seule ligne
-  à partir de la deuxième ligne avec M-^.
+  à partir de la deuxième ligne avec ~M-^~.
 - Réexécutez ~M-x keep-lines RET set-key RET~ pour maintenir uniquement les lignes
   contenant "set-key".
 - Sélectionnez la région pertinente et convertissez-la en tableau Org.

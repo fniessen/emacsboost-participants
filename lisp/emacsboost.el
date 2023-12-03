@@ -1,6 +1,10 @@
-;;; init_emacsboost --- XXX
+;;; emacsboost.el --- Configuration EmacsBoost
 
 ;;; Commentary:
+
+;; Bienvenue dans la configuration EmacsBoost !  Cette configuration regroupe
+;; des astuces, des raccourcis clavier, et des fonctionnalités pour améliorer
+;; votre expérience avec Emacs.
 
 ;;; Code:
 
@@ -248,4 +252,4 @@ windows, leaving only the currently active window visible."
 
 (provide 'emacsboost)
 
-;;; init_emacsboost.el ends here
+;;; emacsboost.el ends here

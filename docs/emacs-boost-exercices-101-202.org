@@ -534,6 +534,48 @@ Exemple :
 *NOTE -* Veuillez noter qu'il y a un caractère de tabulation entre le numéro et
 l'instruction. Vous devez le remplacer par un espace standard.
 
+** Conversions
+
+from:
+
+- WEB-INF/config/afm-projects.xml
+- WEB-INF/config/core.properties
+- WEB-INF/config/mail.properties
+- WEB-INF/config/security.properties
+
+to:
+
+cp WEB-INF/config/afm-projects.xml WEB-INF/config/afm-projects.xml.env-PUBTST
+cp WEB-INF/config/afm-projects.xml WEB-INF/config/afm-projects.xml.env-PUBSTG
+cp WEB-INF/config/afm-projects.xml WEB-INF/config/afm-projects.xml.env-PUBPRD
+
+cp WEB-INF/config/core.properties WEB-INF/config/core.properties.env-PUBTST
+cp WEB-INF/config/core.properties WEB-INF/config/core.properties.env-PUBSTG
+cp WEB-INF/config/core.properties WEB-INF/config/core.properties.env-PUBPRD
+
+cp WEB-INF/config/mail.properties WEB-INF/config/mail.properties.env-PUBTST
+cp WEB-INF/config/mail.properties WEB-INF/config/mail.properties.env-PUBSTG
+cp WEB-INF/config/mail.properties WEB-INF/config/mail.properties.env-PUBPRD
+
+cp WEB-INF/config/security.properties WEB-INF/config/security.properties.env-PUBTST
+cp WEB-INF/config/security.properties WEB-INF/config/security.properties.env-PUBSTG
+cp WEB-INF/config/security.properties WEB-INF/config/security.properties.env-PUBPRD
+
+then:
+
+git add WEB-INF/config/afm-projects.xml.env-PUBTST
+git add WEB-INF/config/afm-projects.xml.env-PUBSTG
+git add WEB-INF/config/afm-projects.xml.env-PUBPRD
+git add WEB-INF/config/core.properties.env-PUBTST
+git add WEB-INF/config/core.properties.env-PUBSTG
+git add WEB-INF/config/core.properties.env-PUBPRD
+git add WEB-INF/config/mail.properties.env-PUBTST
+git add WEB-INF/config/mail.properties.env-PUBSTG
+git add WEB-INF/config/mail.properties.env-PUBPRD
+git add WEB-INF/config/security.properties.env-PUBTST
+git add WEB-INF/config/security.properties.env-PUBSTG
+git add WEB-INF/config/security.properties.env-PUBPRD
+
 * 101.3 - Aide, configuration et personnalisation
 
 ** Aide

@@ -12,6 +12,8 @@ N'oublions pas que l'essentiel est de profiter de chaque instant ensemble, de
 nous détendre et de créer des souvenirs inoubliables. Alors, préparons nos
 valises avec soin et partons en vacances l'esprit tranquille !
 
+XXX Add something here as well
+
 * Préparation des bagages
 
 Pour que tout se déroule sans stress et que nous puissions profiter pleinement
@@ -48,6 +50,8 @@ d'hôtel, Argent liquide, Parapluie (au cas où la météo jouerait des tours).
 - Créons des souvenirs inoubliables.
 
 * Pour les enfants
+
+XXX Add extra info here
 
 Lors de nos déplacements, il est essentiel d'emporter des activités appropriées
 à l'âge de nos enfants pour les divertir pendant les trajets ou les temps

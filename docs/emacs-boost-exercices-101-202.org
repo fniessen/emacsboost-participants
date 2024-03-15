@@ -362,7 +362,7 @@ file_three.pdf
 
 ** Mettre en forme un bloc de texte
 
-Transforme le texte
+Transformer le texte
 
 ~Texte à formater~
 
@@ -527,9 +527,9 @@ Exemple :
 
 1. Navigate to the root directory of the Client repository in Git.
 
-  #+begin_src shell
-  cd /path/to/Client/repository
-  #+end_src
+   #+begin_src shell
+   cd /path/to/Client/repository
+   #+end_src
 
 *NOTE -* Veuillez noter qu'il y a un caractère de tabulation entre le numéro et
 l'instruction. Vous devez le remplacer par un espace standard.

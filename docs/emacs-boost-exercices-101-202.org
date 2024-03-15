@@ -710,6 +710,12 @@ un dépôt de versionnement. Les exercices sont conçus pour guider les étudian
 
 * 202.3/4 - Org mode
 
+** Align this
+
+a        & this & that & result \\
+best     & other-thing & something else & other \\
+some-var & last & a bigger description & here \\
+
 ** Macros et org-mode
 
 J'aimerais fusionner les deux contenus en un tableau Excel (à exporter).

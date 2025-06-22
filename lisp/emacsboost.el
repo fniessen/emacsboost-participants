@@ -35,16 +35,14 @@
         interprogram-paste-function))
 
 ;; 14.13 Indicate changes in the fringe.
-(with-eval-after-load "diff-hl"
+(with-eval-after-load 'diff-hl
   (global-diff-hl-mode 1))
 
-;; 14.15 Check if the fill-column-indicator package is available.
-(if (require 'fill-column-indicator nil 'noerror)
-    (progn
-      (setq fci-rule-column 80) ; Set the desired column
-      (add-hook 'prog-mode-hook 'fci-mode)
-      (add-hook 'text-mode-hook 'fci-mode))
-  (message "Warning: 'fill-column-indicator' package is not installed. Line indicator will not be shown."))
+;; 14.15 Set vertical indicator at column 80.
+(setq-default display-fill-column-indicator-column 80)
+
+;; Enable column indicator display for all modes.
+(display-fill-column-indicator-mode 1)
 
 ;; 14.20 Enable highlighting of the current line.
 (global-hl-line-mode 1)
@@ -211,7 +209,7 @@ windows, leaving only the currently active window visible."
   (require 'server))             ; After init.
 
 ;; Start the Emacs server if it's not already running.
-(with-eval-after-load "server"
+(with-eval-after-load 'server
   (unless (equal (server-running-p) t)
     (server-start))
 
@@ -241,7 +239,7 @@ windows, leaving only the currently active window visible."
 
 
 
-(with-eval-after-load "projectile"
+(with-eval-after-load 'projectile
   ;; Turn on projectile mode by default for all file types
   (projectile-mode)
 

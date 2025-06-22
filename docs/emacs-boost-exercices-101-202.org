@@ -1,4 +1,4 @@
-#+TITLE:     Emacs Boost -- Excercices
+#+TITLE:     Emacs Boost -- Exercices
 #+AUTHOR:    Fabrice Niessen
 #+DATE:      2023-11-08
 #+OPTIONS:   toc:2 H:2
@@ -369,6 +369,51 @@ Transformer le texte
 en
 
 ~<p class="important">Texte à formater</p>~
+
+** Fusion de deux listes numérotées avec une macro Emacs
+
+*** Objectif
+
+Fusionner deux listes numérotées dans Emacs, en plaçant un élément de la seconde
+liste juste en dessous de l’élément correspondant de la première. À partir de :
+
+Liste 1 :
+
+1. titre 1
+2. titre 2
+3. titre 3
+
+Liste 2 :
+
+1. exemple 1
+2. exemple 2
+3. exemple 3
+
+Résultat attendu :
+
+1. titre 1 \\
+   exemple 1
+2. titre 2 \\
+   exemple 2
+3. titre 3 \\
+   exemple 3
+
+*** Solution proposée : créer une macro Emacs
+
+L'idée est d'automatiser l’insertion de chaque élément de la deuxième liste
+juste après le bon élément de la première en procédant comme suit :
+
+1. Placer le curseur sur le premier élément de la liste d'exemples.
+2. Créer une macro qui :
+   - effectue une recherche arrière (C-r) du numéro de l’item courant, par
+     exemple 1., 2., etc.,
+   - une fois trouvée, insère une nouvelle ligne juste après,
+   - colle ou insère le contenu de l’exemple (celui sur lequel on a lancé la
+     macro),
+   - se replace sur le prochain élément de la liste d’exemples (le suivant en
+     bas).
+3. Répéter cette macro pour les trois éléments (ou utiliser C-u 3 pour la
+   répéter 3 fois automatiquement).
 
 ** Commande avec 5 noms de fichiers par ligne
 

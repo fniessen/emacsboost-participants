@@ -1,4 +1,4 @@
-#+TITLE:     Emacs Boost -- Excercices
+#+TITLE:     Emacs Boost -- Exercices
 #+AUTHOR:    Fabrice Niessen
 #+DATE:      2023-11-08
 #+OPTIONS:   toc:2 H:2

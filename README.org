@@ -1,6 +1,6 @@
-* Projet EmacsBoost-Participants
+* Projet EmacsBoost-Academy
 
-Bienvenue dans le projet EmacsBoost-Participants !
+Bienvenue dans le projet EmacsBoost-Academy !
 
 Ce dépôt GitHub regroupe des ressources et des fichiers pour améliorer votre
 expérience avec Emacs et vous aider à maîtriser ses fonctionnalités. Explorez

@@ -272,7 +272,7 @@ Transformer :
 
 #+begin_src shell
 # Remove lines containing '.git/' from the temporary file.
-grep -v '.git/' "$temp_file" > "$temp_file.tmp" && mv "$temp_file.tmp" "$LOG_FILE"
+grep -v '\.git/' "$temp_file" > "$temp_file.tmp" && mv "$temp_file.tmp" "$LOG_FILE"
 
 # Remove lines containing 'ACCESS,ISDIR' from the temporary file.
 grep -v 'ACCESS,ISDIR' "$temp_file" > "$temp_file.tmp" && mv "$temp_file.tmp" "$LOG_FILE"
@@ -291,7 +291,7 @@ en
 
 #+begin_src shell
 # Remove lines containing '.git/' from the temporary file.
-grep -v '.git/' "$temp_file" > "$temp_file.tmp" \
+grep -v '\.git/' "$temp_file" > "$temp_file.tmp" \
     && mv "$temp_file.tmp" "$LOG_FILE"
 
 # Remove lines containing 'ACCESS,ISDIR' from the temporary file.
